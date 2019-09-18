@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,10 @@ class ProductController extends Controller
        $this->password = 'MSK4Z668IAXMIFDJ3PUA4SNNOXDNOQF9';
     }
 
+    public function viewIndex(){
+        return view('products.index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,17 +33,7 @@ class ProductController extends Controller
     {
         $url = 'https://api.eposnowhq.com/api/v2/Product';
         $getAllProducts = $this->productRepository->getAllProducts($url, $this->username, $this->password);
-        return view('products.index')->withProducts($getAllProducts);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json(['data' => $getAllProducts]);
     }
 
     /**
@@ -64,17 +59,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -83,7 +67,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $url = "https://api.eposnowhq.com/api/v2/Product/$id";
+        $updateProduct = $this->productRepository->updateProduct($url, $request, $this->username, $this->password);
+        return response()->json(['data' => $updateProduct]);
     }
 
     /**

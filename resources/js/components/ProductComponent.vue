@@ -19,7 +19,7 @@
                 <input type="text" class="form-control" placeholder="Student Last Name"
                        v-model="product.SalePrice">
             </div>
-            <button type="submit" class="btn btn-light btn-block">Save</button>
+            <button type="submit" class="btn btn-light btn-block">Update</button>
 
         </form>
         <nav aria-label="Page navigation example">
@@ -100,25 +100,25 @@
                 this.pagination = pagination;
             },
             updateProduct(){
-                //update
-                fetch(`api/product/${this.product.ProductID}`, {
-                    method: 'put',
-                    body: JSON.stringify(this.product),
-                    headers: {
-                        'content-type': 'application/json'
-                    }
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        this.product.ProductID = '';
-                        this.product.Name = '';
-                        this.product.CostPrice = '';
-                        this.product.SalePrice = '';
-                        alert('Products Successfully Updated!')
-                        this.fetchProducts();
+                    //update
+                    fetch(`api/product/${this.product.ProductID}`, {
+                        method: 'put',
+                        body: JSON.stringify(this.product),
+                        headers: {
+                            'content-type': 'application/json'
+                        }
                     })
-                    .catch(err => console.log(err));
-            },
+                        .then(res => res.json())
+                        .then(data => {
+                            this.product.ProductID = '';
+                            this.product.Name = '';
+                            this.product.CostPrice = '';
+                            this.product.SalePrice = '';
+                            alert('Products Successfully Updated!')
+                            this.fetchProducts();
+                        })
+                        .catch(err => console.log(err));
+                },
             editProduct(product){
                 console.log(product)
                 this.edit = true;
@@ -131,4 +131,3 @@
         },
     }
 </script>
-

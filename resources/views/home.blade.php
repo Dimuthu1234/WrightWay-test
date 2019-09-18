@@ -16,7 +16,7 @@
 
                     You are logged in!
 
-                    <h3>See all product data : <a href="{{ route('product.index') }}">Get All Products</a></h3>
+                    <h3>See all product data : <a href="{{ route('productView') }}">Get All Products</a></h3>
                 </div>
             </div>
         </div>
