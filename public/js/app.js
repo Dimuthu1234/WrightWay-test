@@ -37706,7 +37706,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Class Room" },
+            attrs: { type: "text", placeholder: "Product ID" },
             domProps: { value: _vm.product.ProductID },
             on: {
               input: function($event) {
@@ -37730,7 +37730,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Teacher's Name" },
+            attrs: { type: "text", placeholder: "Name" },
             domProps: { value: _vm.product.Name },
             on: {
               input: function($event) {
@@ -37754,7 +37754,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Student First Name" },
+            attrs: { type: "text", placeholder: "Cost Price" },
             domProps: { value: _vm.product.CostPrice },
             on: {
               input: function($event) {
@@ -37778,7 +37778,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Student Last Name" },
+            attrs: { type: "text", placeholder: "Sale Price" },
             domProps: { value: _vm.product.SalePrice },
             on: {
               input: function($event) {

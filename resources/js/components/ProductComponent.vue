@@ -2,21 +2,21 @@
     <div class="table-responsive">
         <form @submit.prevent="updateProduct" class="mb-3">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Class Room" v-model="product.ProductID">
+                <input type="text" class="form-control" placeholder="Product ID" v-model="product.ProductID">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Teacher's Name"
+                <input type="text" class="form-control" placeholder="Name"
                        v-model="product.Name">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Student First Name"
+                <input type="text" class="form-control" placeholder="Cost Price"
                        v-model="product.CostPrice">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Student Last Name"
+                <input type="text" class="form-control" placeholder="Sale Price"
                        v-model="product.SalePrice">
             </div>
             <button type="submit" class="btn btn-light btn-block">Update</button>
